@@ -1,7 +1,13 @@
 import React from "react";
 import { motion, useMotionValue, useTransform } from "framer-motion";
 
-const ThreeDCard = () => {
+interface ThreeDCardProps {
+  title: string;
+  description: string;
+  imageUrl: string;
+}
+
+const ThreeDCard = ({ title, description, imageUrl }: ThreeDCardProps) => {
   const x = useMotionValue(0);
   const y = useMotionValue(0);
 
@@ -29,11 +35,11 @@ const ThreeDCard = () => {
         whileTap={{ scale: 0.95 }}
       >
         <div className="mb-4">
-          <h1 className="text-lg font-bold">Hello</h1>
+          <h1 className="text-lg font-bold">{title}</h1>
         </div>
         <div>
           <img
-            src="https://cdn.pixabay.com/photo/2024/11/07/02/32/ai-generated-9179546_1280.jpg"
+            src={imageUrl}
             alt=""
             className="rounded-lg"
             width={400}
@@ -41,7 +47,7 @@ const ThreeDCard = () => {
           />
         </div>
         <div className="mt-5">
-          <h1 className="text-md text-gray-600">Description</h1>
+          <h1 className="text-md text-gray-600">{description}</h1>
         </div>
       </motion.div>
     </motion.div>

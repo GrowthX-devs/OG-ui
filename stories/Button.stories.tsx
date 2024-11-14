@@ -20,6 +20,7 @@ export default {
         "gradient",
         "glass",
         "neumorphic",
+        "glowOnHover",
         "icon",
       ],
     },
@@ -76,30 +77,19 @@ Neumorphic.args = {
   size: "medium",
   onClick: action("Neumorphic button clicked"),
 };
-
-// Icon button with an example icon
-// export const IconButton = Template.bind({});
-// IconButton.args = {
-//   label: "Icon Button",
-//   variant: "icon",
-//   size: "medium",
-//   icon: <FaStar />, // Example icon
-//   onClick: action("Icon button clicked"),
-// };
-
-// Additional examples for different sizes
-export const Small = Template.bind({});
-Small.args = {
-  label: "Small Button",
-  size: "small",
+export const DisabledPrimary = Template.bind({});
+DisabledPrimary.args = {
+  label: "Disabled Primary Button",
   variant: "primary",
-  onClick: action("Small button clicked"),
+  size: "medium",
+  disabled: true,
+  onClick: action("Primary button clicked"),
 };
 
-export const Large = Template.bind({});
-Large.args = {
-  label: "Large Button",
-  size: "large",
-  variant: "primary",
-  onClick: action("Large button clicked"),
+export const glowOnHover = Template.bind({});
+glowOnHover.args = {
+  label: "Glow-on-hover Button",
+  variant: "glowOnHover",
+  size: "medium",
+  onClick: action("Glow-on-hover button clicked"),
 };

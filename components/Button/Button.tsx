@@ -9,10 +9,12 @@ type ButtonProps = {
     | "gradient"
     | "glass"
     | "neumorphic"
-    | "icon";
+    | "icon"
+    | "glowOnHover";
   size?: "small" | "medium" | "large";
   onClick?: () => void;
   icon?: JSX.Element; // Optional icon for icon variant
+  disabled?: boolean; // New disabled prop
 };
 
 const Button: React.FC<ButtonProps> = ({
@@ -21,6 +23,7 @@ const Button: React.FC<ButtonProps> = ({
   size = "medium",
   onClick,
   icon,
+  disabled = false,
 }) => {
   const baseStyle = "px-4 py-2 rounded transition duration-300 ease-in-out";
 
@@ -37,16 +40,24 @@ const Button: React.FC<ButtonProps> = ({
     neumorphic:
       "bg-blue-500 text-white rounded-md shadow-inner hover:shadow-md",
     icon: "flex items-center space-x-2 bg-blue-500 text-white px-5 py-2 rounded-full shadow-md hover:bg-blue-600",
+    glowOnHover:
+      "glow-on-hover relative bg-gray-900 text-white rounded-lg transition-opacity ease-in-out",
   }[variant];
 
   // Define size styles based on the size prop
   const sizeStyle =
     size === "small" ? "text-sm" : size === "large" ? "text-lg" : "text-base";
 
+  // Define disabled style
+  const disabledStyle = "opacity-50 cursor-not-allowed";
+
   return (
     <button
-      onClick={onClick}
-      className={`${baseStyle} ${variantStyle} ${sizeStyle}`}
+      onClick={!disabled ? onClick : undefined} // Prevent onClick when disabled
+      className={`${baseStyle} ${variantStyle} ${sizeStyle} ${
+        disabled ? disabledStyle : ""
+      }`}
+      disabled={disabled} // HTML disabled attribute
     >
       {/* Only render icon if the icon prop is passed and the variant is 'icon' */}
       {variant === "icon" && icon && <span>{icon}</span>}
