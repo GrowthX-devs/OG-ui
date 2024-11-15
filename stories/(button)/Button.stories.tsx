@@ -1,6 +1,6 @@
 import React from "react";
 import { StoryFn, Meta } from "@storybook/react";
-import { Button } from "../components";
+import { Button, ToggleButton } from "../../components";
 import { action } from "@storybook/addon-actions";
 
 export default {
@@ -27,9 +27,9 @@ export default {
   },
 } as Meta<typeof Button>;
 
-const Template: StoryFn<typeof Button> = (args) => <Button {...args} />;
+const Button1: StoryFn<typeof Button> = (args) => <Button {...args} />;
 
-export const Primary = Template.bind({});
+export const Primary = Button1.bind({});
 Primary.args = {
   label: "Primary Button",
   variant: "primary",
@@ -37,7 +37,7 @@ Primary.args = {
   onClick: action("Primary button clicked"),
 };
 
-export const Secondary = Template.bind({});
+export const Secondary = Button1.bind({});
 Secondary.args = {
   label: "Secondary Button",
   variant: "secondary",
@@ -46,7 +46,7 @@ Secondary.args = {
 };
 
 // New button variant stories
-export const Outline = Template.bind({});
+export const Outline = Button1.bind({});
 Outline.args = {
   label: "Outline Button",
   variant: "outline",
@@ -54,7 +54,7 @@ Outline.args = {
   onClick: action("Outline button clicked"),
 };
 
-export const Gradient = Template.bind({});
+export const Gradient = Button1.bind({});
 Gradient.args = {
   label: "Gradient Button",
   variant: "gradient",
@@ -62,7 +62,7 @@ Gradient.args = {
   onClick: action("Gradient button clicked"),
 };
 
-export const Glass = Template.bind({});
+export const Glass = Button1.bind({});
 Glass.args = {
   label: "Glass Button",
   variant: "glass",
@@ -70,14 +70,14 @@ Glass.args = {
   onClick: action("Glass button clicked"),
 };
 
-export const Neumorphic = Template.bind({});
+export const Neumorphic = Button1.bind({});
 Neumorphic.args = {
   label: "Neumorphic Button",
   variant: "neumorphic",
   size: "medium",
   onClick: action("Neumorphic button clicked"),
 };
-export const DisabledPrimary = Template.bind({});
+export const DisabledPrimary = Button1.bind({});
 DisabledPrimary.args = {
   label: "Disabled Primary Button",
   variant: "primary",
@@ -86,7 +86,7 @@ DisabledPrimary.args = {
   onClick: action("Primary button clicked"),
 };
 
-export const glowOnHover = Template.bind({});
+export const glowOnHover = Button1.bind({});
 glowOnHover.args = {
   label: "Glow-on-hover Button",
   variant: "glowOnHover",
