@@ -72,8 +72,10 @@ const Button: React.FC<ButtonProps> = ({
     >
       {isLoading ? (
         // Render spinner for the loading state
-
-        <span className="animate-spin w-5 h-5 border-2 border-white border-t-transparent rounded-full"></span>
+        <>
+          <span>{children}</span>
+          <span className="animate-spin w-5 h-5 pl-2 border-2 border-white border-t-transparent rounded-full"></span>
+        </>
       ) : variant === "icon" && icon ? (
         // Render icon if variant is "icon" and an icon is provided
         <span>{icon}</span>

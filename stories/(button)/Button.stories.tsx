@@ -1,6 +1,6 @@
 import React from "react";
 import { StoryFn, Meta } from "@storybook/react";
-import { Button } from "../../components";
+import { Button } from "@/components";
 import { action } from "@storybook/addon-actions";
 
 export default {

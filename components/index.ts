@@ -1,2 +1,14 @@
 export { Button, ToggleButton } from "./Button";
 export { default as ThreeDCard } from "./animations/Card";
+export { default as Input } from "./input/input";
+export type { InputProps } from "./input/input";
+export { FormControl } from "./form-control/form-control";
+export type { FormControlProps } from "./form-control/form-control";
+export { Alert } from "./alert/alert";
+export type { AlertProps } from "./alert/alert";
+export { Avatar } from "./avatar/avatar";
+export type { AvatarProps } from "./avatar/avatar";
+export { Badge } from "./badge/badge";
+export type { BadgeProps } from "./badge/badge";
+export { Select } from "./select/select";
+export type { SelectProps, SelectOption } from "./select/select";
