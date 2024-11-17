@@ -80,3 +80,37 @@ body {
     background-position: 0 0;
   }
 }
+
+/* components/skeleton */
+/* components/Skeleton.css */
+.skeleton {
+  background-color: rgba(224, 224, 224, 0.086); /* background color */
+  border-radius: 4px; /* Rounded corners */
+  position: relative; /* Positioning for the shimmer effect */
+  overflow: hidden; /* Hide overflow for the shimmer */
+}
+
+.skeleton::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%; /* Start off-screen to the left */
+  width: 150%; /* Full width of the skeleton */
+  height: 100%; /* Full height of the skeleton */
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 40%,
+    rgba(255, 255, 255, 0.544) 50%,
+    rgba(255, 255, 255, 0) 60%
+  ); /* Shimmer gradient with higher opacity */
+  animation: shimmer 1.2s infinite; /* Animation for shimmering effect */
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%); /* Start from left */
+  }
+  100% {
+    transform: translateX(100%); /* Move to right */
+  }
+}
